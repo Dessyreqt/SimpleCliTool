@@ -1,5 +1,6 @@
 ﻿namespace SimpleCliTool.Logic
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Data;
@@ -19,11 +20,18 @@
             {
                 if (parameter.Required && !command.AppState.CurrentCommand.Parameters.ContainsKey(parameter.InternalName))
                 {
-                    command.AppState.CurrentOutput = new CommandOutput("Missing required parameter!");
+                    command.AppState.CurrentOutput = new CommandOutput("Missing required parameter!", false);
                 }
             }
 
-            command.Handle();
+            try
+            {
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                command.AppState.CurrentOutput = new CommandOutput($"An error occurred: {ex.Message}", false);
+            }
         }
 
         public abstract string HelpText { get; }
