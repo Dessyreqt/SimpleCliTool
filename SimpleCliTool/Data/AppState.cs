@@ -11,6 +11,7 @@
         public CommandOutput PreviousOutput { get; set; }
         public Configuration Configuration { get; set; }
         public DataEnvironment CurrentEnvironment { get; set; }
+        public bool Exiting { get; set; }
 
         public AppState()
         {

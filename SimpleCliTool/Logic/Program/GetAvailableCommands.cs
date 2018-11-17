@@ -17,7 +17,6 @@
         protected override void Handle()
         {
             AppState.AvailableCommands.Clear();
-            AppState.AvailableCommands.Add(GetCommandName(typeof(ExitCommand)), typeof(ExitCommand));
 
             var types = GetCommands($"{nameof(SimpleCliTool)}.{nameof(Logic)}.{nameof(User)}");
             foreach (var type in types)

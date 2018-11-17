@@ -39,7 +39,7 @@
                 }
 
                 Console.WriteLine(appState.CurrentOutput.Text);
-            } while (!(appState.CurrentCommand.Command is ExitCommand));
+            } while (!appState.Exiting);
         }
 
         private static string HandlePreviousCommandTokens(AppState appState, string input)

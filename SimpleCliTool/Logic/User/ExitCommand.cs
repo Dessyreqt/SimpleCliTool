@@ -1,4 +1,4 @@
-﻿namespace SimpleCliTool.Logic.Program
+﻿namespace SimpleCliTool.Logic.User
 {
     using Data;
 
@@ -12,6 +12,8 @@
 
         protected override void Handle()
         {
+            AppState.Exiting = true;
+            AppState.CurrentOutput = new CommandOutput("Exiting...");
         }
     }
 }
