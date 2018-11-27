@@ -39,7 +39,8 @@
                 }
 
                 Console.WriteLine(appState.CurrentOutput.Text);
-            } while (!appState.Exiting);
+            }
+            while (!appState.Exiting);
         }
 
         private static string HandlePreviousCommandTokens(AppState appState, string input)
@@ -75,6 +76,5 @@
 
             return appState;
         }
-
     }
 }

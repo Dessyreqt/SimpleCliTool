@@ -101,7 +101,7 @@
             }
         }
 
-        public List<string> GetCommands(string input)
+        private List<string> GetCommands(string input)
         {
             return AppState.AvailableCommands.Keys.Where(key => key.StartsWith(input.Trim(), StringComparison.InvariantCultureIgnoreCase)).ToList();
         }
